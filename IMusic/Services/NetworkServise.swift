@@ -13,7 +13,7 @@ class NetworkServise {
     func fetchRequest(searchText: String, completion: @escaping (SearchResponse?) -> Void) {
         let url = "https://itunes.apple.com/search?term="
         let params = ["term":"\(searchText)",
-                      "limit":"10",
+                      "limit":"30",
                       "media":"music"]
         AF.request(url, method: .get, parameters: params, headers: nil).response { dataResponse in
             if let error = dataResponse.error {
